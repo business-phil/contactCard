@@ -1,0 +1,46 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+}
+#container {
+	padding: 12px;
+}
+#input, #card-column {
+	display: inline-block;
+	vertical-align: top;
+}
+h2 {
+	margin-left: 32px;
+	font-size: 28px;
+}
+form {
+	width: 300px;
+	margin-left: 24px;
+	padding-top: 12px;
+	text-align: right;
+	border-top: 2px solid #666;
+	font-family: serif;
+}
+form input[type="text"] {
+	margin: 4px 4px 4px 2px;
+}
+form textarea {
+	width: 171px;
+	margin-top: 4px;
+	vertical-align: top;
+}
+form input[type="submit"] {
+	margin-top: 12px;
+}
+
+#card-column .contact-card {
+	margin: 16px 32px;
+	padding: 16px;
+	width: 280px;
+	border: 2px solid #666;
+	text-align: center;
+}
+.contact-card h1 {
+	margin-bottom: 6px;
+}

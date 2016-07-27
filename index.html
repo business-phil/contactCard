@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>Contact Card Application</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('form').submit(function() {
+				$('#card-column').prepend('<div class="contact-card"><h1 alt-desc="'
+					 + $('#description').val() + '">' + $('#first-name').val() + ' ' + $('#last-name').val() 
+					 + '</h1><p alt-desc="Return to name!">Click for description!</p></div>');
+				return false;
+			});
+			$('#card-column').on('click', 'p', function() {
+				// Switch p text
+				var tempParagraph = $(this).attr("alt-desc");
+				$(this).attr("alt-desc", $(this).text());
+				$(this).text(tempParagraph);
+				// Switch h1 text
+				var tempHeader = $(this).siblings('h1').attr("alt-desc");
+				$(this).siblings('h1').attr("alt-desc", $(this).siblings('h1').text());
+				$(this).siblings('h1').text(tempHeader);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="container">
+		<div id="input">
+			<h2>Contact Info</h2>
+			<form>
+				First Name: <input type="text" id="first-name" /><br />
+				Last Name: <input type="text" id="last-name" /><br />
+				Description: <textarea rows="4" id="description" placeholder="Enter description..."></textarea> <br />
+				<input type="submit" value="Submit" />
+			</form>
+		</div>
+		<div id="card-column">
+		</div>
+	</div>
+</body>
+</html>
